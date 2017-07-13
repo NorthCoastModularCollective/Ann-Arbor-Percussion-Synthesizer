@@ -1,3 +1,4 @@
 # Ann Arbor Percussion Synthesizer
-## Complex sounds with simple knobs
+
+![](https://github.com/NorthCoastModularCollective/Ann-Arbor-Percussion-Synthesizer/blob/master/A2Perc.gif)
 
