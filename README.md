@@ -6,6 +6,8 @@
 
 CAUTION: this project is still in development. There are many bugs and gaps. 
 
+Audio Sample, [here](https://soundcloud.com/verzerren/ann-arbor-percussion-synthesizer-v-001-sound-sample)
+
 Hardware Overview:
 - Teensy 3.2
 - Teensy Audio Board for audio
