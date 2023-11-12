@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "A2 Drums")(type "KiCad")(uri "$(KIPRJMOD)/A2 Drums.pretty")(options "")(descr ""))
+)

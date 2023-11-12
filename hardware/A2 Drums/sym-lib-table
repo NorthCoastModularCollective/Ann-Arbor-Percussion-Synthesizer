@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "A2 Drums-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/A2 Drums-eagle-import.kicad_sym")(options "")(descr ""))
+)
