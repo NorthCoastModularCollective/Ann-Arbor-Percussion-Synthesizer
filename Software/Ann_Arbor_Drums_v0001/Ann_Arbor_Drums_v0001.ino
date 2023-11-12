@@ -41,6 +41,7 @@ AudioMixer4              mixer1;         //xy=929.0000686645508,365.999996185302
 AudioFilterStateVariable filter1;        //xy=1077.0000686645508,334.0000190734863
 AudioMixer4              mixer2;         //xy=1221.0001640319824,363.0000801086426
 AudioOutputI2S           i2s1;           //xy=1358.0000648498535,363.0000810623169
+//AudioOutputUSB           usb1;           //xy=1378.5,455.75
 AudioConnection          patchCord1(sine1, pwm1);
 AudioConnection          patchCord2(sine1, sine_fm1);
 AudioConnection          patchCord3(sine_fm1, 0, mixer3, 3);
@@ -58,7 +59,10 @@ AudioConnection          patchCord14(filter1, 0, mixer2, 0);
 AudioConnection          patchCord15(filter1, 2, mixer2, 1);
 AudioConnection          patchCord16(mixer2, 0, i2s1, 0);
 AudioConnection          patchCord17(mixer2, 0, i2s1, 1);
+//AudioConnection          patchCord18(mixer2, 0, usb1, 0);
+//AudioConnection          patchCord19(mixer2, 0, usb1, 1);
 // GUItool: end automatically generated code
+
 
 
 AudioControlSGTL5000 codec;
@@ -92,7 +96,7 @@ Serial.begin(9600);
 // Get the board ready
   AudioMemory(200);
   codec.enable();
-  codec.volume(.4); //0-1. crank it. We'll control volume per drum channel with the mixers.
+  codec.volume(1); //0-1. crank it. We'll control volume per drum channel with the mixers.
   
 //Now set up the oscillators  
   AudioNoInterrupts(); 
@@ -276,18 +280,11 @@ if ((digitalRead(Trigger1Pin) == LOW)){
 //  Here for troubleshooting when Trigger isn't available
   if (msec >= 500) {
 //DRUM1
-digitalWrite(1, HIGH);
- // drum1.noteOn();
-  //envelope1.noteOn(); //drum envelope
-  //envelope2.noteOn(); //noise source
-  //delay(100);
-  //envelope1.noteOff();
-  //envelope2.noteOff();
- // digitalWrite(Trig1LED, HIGH); 
-  //delay(500);               // wait for half a second    
+//digitalWrite(1, HIGH); //Uncomment this and...
+ 
   msec = 0;
   } else {
-digitalWrite(1, LOW);
+//digitalWrite(1, LOW); //...also uncomment this, in order to test without having to send it a trigger
   }
     
 } //End of main Loop
