@@ -22,6 +22,13 @@
   This version uses the pt8211 audio shield
 */
 
+
+/* Notes to self for future development
+Look into MIDI callbacks for handling MIDI input to control the voices https://github.com/FortySevenEffects/arduino_midi_library/wiki/Using-Callbacks
+
+
+*/
+
 //For modifications, the code from the "GUItool" below can be imported into the Teensy audio system design tool at https://www.pjrc.com/teensy/gui/index.html
 #include <Audio.h>
 #include <Wire.h>
