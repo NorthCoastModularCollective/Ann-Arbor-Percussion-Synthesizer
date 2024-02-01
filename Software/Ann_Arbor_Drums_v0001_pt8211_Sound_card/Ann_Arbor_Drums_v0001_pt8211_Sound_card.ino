@@ -77,17 +77,14 @@ AudioConnection          patchCord17(mixer2, 0, pt8211_1, 1);
 
 //  Set up all the pin number variables
 //trigger inputs
-int Trigger1Pin = 5; 
-
-//LEDs
-//int Trig1LED = 9;
+int Trigger1Pin = 1; 
 
 //Potentiometers
-int pA2 = A1;
-int pB2 = A0;
-int pC2 = A2;
-int pD2 = A7;
-int pE2 = A6;
+int pA2 = A0;
+int pB2 = A3;
+int pC2 = A6;
+int pD2 = A9;
+int pE2 = A12;
 
 //variables for tracking the trigger states
 int playTimes = 0; 
@@ -155,26 +152,14 @@ sine_fm1.amplitude(1);
 //triggers
   pinMode(Trigger1Pin, INPUT); //D1 is a digital input
 
-//LEDs  
-//  pinMode(Trig1LED, OUTPUT);
 
-//Test Digital out
-pinMode(1, OUTPUT); //only needed for testing (makes the CD output into a gate that can be patched into the trigger input on the board)
+
 
   AudioInterrupts();
 
-/*
-//Board ready, flash LEDs to indicate ready state on "boot up"
-digitalWrite(Trig1LED, HIGH); //animate cycling the LEDs on from left to right
-delay(100);              
-digitalWrite(Trig1LED, LOW);
-delay(100);              
-digitalWrite(Trig1LED, HIGH);
-delay(200);              
-digitalWrite(Trig1LED, LOW);
-*/
 
-}
+
+} // end void setup
 
 elapsedMillis msec = 0; //here for timing the troubleshooting loop at the bottom
 
@@ -288,11 +273,11 @@ if ((digitalRead(Trigger1Pin) == HIGH)){
 //  Here for troubleshooting when Trigger isn't available
   if (msec >= 500) {
 //DRUM1
-//digitalWrite(1, HIGH); //Uncomment this and...
+//digitalWrite(1, LOW); //Uncomment this and...
  
   msec = 0;
   } else {
-//digitalWrite(1, LOW); //...also uncomment this, in order to test without having to send it a trigger
+//digitalWrite(1, HIGH); //...also uncomment this, in order to test without having to send it a trigger
   }
     
 } //End of main Loop
